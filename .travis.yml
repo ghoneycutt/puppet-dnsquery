@@ -12,4 +12,4 @@ env:
 gemfile: Gemfile
 branches:
   only:
-    - spec_units
+    - spec_tests
