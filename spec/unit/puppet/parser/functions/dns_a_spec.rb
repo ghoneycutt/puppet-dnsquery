@@ -37,4 +37,8 @@ describe "the dns_a function" do
   it 'should return an array with multiple A records ([173.194.44.48,173.194.44.49,173.194.44.50,173.194.44.51,173.194.44.52])' do
     subject.call(['google.com']).should be_true
   end
+
+  it 'should raise and error if there is no A record' do
+    lambda { scope.function_dns_cname(['no_a.example.tld']) }.should( raise_error(Resolv::ResolvError))
+  end
 end
