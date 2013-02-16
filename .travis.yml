@@ -10,3 +10,6 @@ env:
   - PUPPET_VERSION=2.7.13
   - PUPPET_VERSION=3.1.0
 gemfile: Gemfile
+branches:
+  only:
+    - spec_units
