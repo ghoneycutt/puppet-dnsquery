@@ -27,9 +27,10 @@ describe "the dns_cname function" do
 
   it 'should return a string with one CNAME record (he.net)' do
     subject.call(['www.he.net']).should be_true
+    subject.call(['www.he.net']).class.should == String
   end
 
-  it 'should raise and error if there is no CNAME record' do
+  it 'should raise an error if there is no CNAME record' do
     lambda { scope.function_dns_cname(['no_cname.example.tld']) }.should( raise_error(Resolv::ResolvError))
   end
 end

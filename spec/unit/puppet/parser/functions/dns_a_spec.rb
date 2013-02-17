@@ -30,15 +30,17 @@ describe "the dns_a function" do
                                                        '173.194.44.52'])
   end
 
-  it 'should return an array with one A record (4.2.2.1)' do
+  it 'should return a string with one A record (4.2.2.1)' do
     subject.call(['a.resolvers.Level3.net']).should be_true
+    subject.call(['a.resolvers.Level3.net']).class.should == String
   end
 
   it 'should return an array with multiple A records ([173.194.44.48,173.194.44.49,173.194.44.50,173.194.44.51,173.194.44.52])' do
     subject.call(['google.com']).should be_true
+    subject.call(['google.com']).class.should == Array
   end
 
-  it 'should raise and error if there is no A record' do
+  it 'should raise an error if there is no A record' do
     lambda { scope.function_dns_cname(['no_a.example.tld']) }.should( raise_error(Resolv::ResolvError))
   end
 end

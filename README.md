@@ -8,17 +8,17 @@ Usage
 
 ### dns_lookup
 
-Does a DNS lookup and returns an array of addresses.
+Does a DNS lookup and returns a string for a single address or an array of addresses.
 
 ### dns_a
 
-Retrieves DNS A records and returns it as an array. Each record in the
-array will be a IPv4 address.
+Retrieves DNS A records and returns a string for a single record or an array of
+records. Each entry will be an IPv4 address.
 
 ### dns_aaaa
 
-Retrieves DNS AAAA records and returns it as an array. Each record in the
-array will be a IPv6 address.
+Retrieves DNS AAAA records and returns a string for a single record or an array of
+records. Each entry will be an IPv4 address.
 
 ### dns_cname
 
